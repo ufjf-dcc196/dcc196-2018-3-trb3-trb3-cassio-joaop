@@ -18,14 +18,14 @@
         </activity>
         <activity android:name=".FormLivro" />
         <activity
-            android:name=".Interesses"
+            android:name=".Promocao"
             android:label="@string/title_activity_interesses"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ListagemLivros"
             android:label="@string/title_activity_listagem_livros"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ExibeLivro"></activity>
+        <activity android:name=".GerirLivros"></activity>
     </application>
 
 </manifest>
