@@ -5,12 +5,12 @@ public class Livro {
     private String titulo,autor, editora,versao,disponibilidade,ano;
 
 
-    public Livro(String titulo, String autor, String editora, String versao, String disponibilidade, String ano) {
+    public Livro(String titulo, String autor, String editora, String versao, String ano) {
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
         this.versao = versao;
-        this.disponibilidade = disponibilidade;
+        this.disponibilidade = "DISPONIVEL";
         this.ano = ano;
     }
 
