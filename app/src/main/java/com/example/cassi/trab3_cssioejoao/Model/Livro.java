@@ -2,11 +2,10 @@ package com.example.cassi.trab3_cssioejoao.Model;
 
 public class Livro {
 
-    private String titulo,autor, editora,versao;
-    private boolean disponibilidade;
-    private int ano;
+    private String titulo,autor, editora,versao,disponibilidade,ano;
 
-    public Livro(String titulo, String autor, String editora, String versao, boolean disponibilidade, int ano) {
+
+    public Livro(String titulo, String autor, String editora, String versao, String disponibilidade, String ano) {
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
@@ -47,19 +46,19 @@ public class Livro {
         this.versao = versao;
     }
 
-    public boolean isDisponibilidade() {
+    public String isDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(boolean disponibilidade) {
+    public void setDisponibilidade(String disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 
-    public int getAno() {
+    public String getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(String ano) {
         this.ano = ano;
     }
 }
