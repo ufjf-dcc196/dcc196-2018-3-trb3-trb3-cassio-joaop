@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Trab3 - Cássio e Joao</string>
+    <string name="title_activity_interesses">Interesses</string>
+    <string name="title_activity_listagem_livros">ListagemLivros</string>
+</resources>
