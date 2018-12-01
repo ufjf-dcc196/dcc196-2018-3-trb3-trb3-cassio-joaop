@@ -25,7 +25,8 @@
             android:name=".ListagemLivros"
             android:label="@string/title_activity_listagem_livros"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GerirLivros"></activity>
+        <activity android:name=".GerirLivros" />
+        <activity android:name=".FormPromocao"></activity>
     </application>
 
 </manifest>
