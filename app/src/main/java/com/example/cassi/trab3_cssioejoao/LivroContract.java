@@ -15,12 +15,12 @@ public class LivroContract{
 
         public final static String CREATE_LIVRO  = "CREATE TABLE "+Livro.TABLE_NAME+" ("
                     + Livro.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + Livro.COLUMN_NAME_TITULO+ " TEXT, "
+                    + Livro.COLUMN_NAME_TITULO+ " TEXT,"
                     + Livro.COLUMN_NAME_AUTOR+ " TEXT,"
-                    + Livro.COLUMN_NAME_EDITORA+ " TEXT"
+                    + Livro.COLUMN_NAME_EDITORA+ " TEXT,"
                     + Livro.COLUMN_NAME_VERSAO+ " TEXT, "
                     + Livro.COLUMN_NAME_AUTOR+ " TEXT,"
-                    + Livro.COLUMN_NAME_DISPONIBILIDADE+ " TEXT"
+                    + Livro.COLUMN_NAME_DISPONIBILIDADE+ " TEXT,"
                     + Livro.COLUMN_NAME_ANO+ " TEXT"
                     +")";
             public final static String DROP_LIVRO = "DROP TABLE IF EXISTS "+Livro.TABLE_NAME;

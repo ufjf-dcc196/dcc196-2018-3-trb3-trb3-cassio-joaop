@@ -8,7 +8,7 @@
     tools:context=".">
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnCadastraLivro"
         android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
