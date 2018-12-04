@@ -19,7 +19,6 @@ public class LivroContract{
                     + Livro.COLUMN_NAME_AUTOR+ " TEXT,"
                     + Livro.COLUMN_NAME_EDITORA+ " TEXT,"
                     + Livro.COLUMN_NAME_VERSAO+ " TEXT, "
-                    + Livro.COLUMN_NAME_AUTOR+ " TEXT,"
                     + Livro.COLUMN_NAME_DISPONIBILIDADE+ " TEXT,"
                     + Livro.COLUMN_NAME_ANO+ " TEXT"
                     +")";

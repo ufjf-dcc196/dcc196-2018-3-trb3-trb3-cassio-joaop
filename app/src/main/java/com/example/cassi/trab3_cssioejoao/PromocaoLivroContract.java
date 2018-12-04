@@ -11,7 +11,7 @@ public class PromocaoLivroContract{
         public final static String CREATE_PROMOCAOLIVRO  = "CREATE TABLE "+PromocaoLivro.TABLE_NAME+" ("
                 + PromocaoLivro.COLUMN_NAME_LIVRO+ " TEXT, "
                 + PromocaoLivro.COLUMN_NAME_PROMOCAO+ " TEXT,"
-                + "PRIMARY KEY (livro,nome),"
+                + "PRIMARY KEY (titulo,nome),"
                 + "FOREIGN KEY(titulo) REFERENCES Livro(titulo), "
                 + "FOREIGN KEY(nome) REFERENCES Promocao(nome)"
                 +")";
