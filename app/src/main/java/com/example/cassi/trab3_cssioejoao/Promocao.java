@@ -27,7 +27,8 @@ public class Promocao extends AppCompatActivity {
         rclPromocoes.setLayoutManager(new LinearLayoutManager(this));
 
         btnVoltar = (Button) findViewById(R.id.btnListagemPromocaoVoltar);
-        btnCadastrarPromo = (Button) findViewById(R.id.btnCadastra) ;
+        btnCadastrarPromo = (Button) findViewById(R.id.btnCadastrarPromocao) ;
+
         PRAdapter = new promocaoAdapter(getPromocoes());
         rclPromocoes.setAdapter(PRAdapter);
 

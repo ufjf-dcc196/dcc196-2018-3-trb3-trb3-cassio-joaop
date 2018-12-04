@@ -43,7 +43,7 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View PromocaoView =inflater.inflate(R.layout.rcl_layout, viewGroup, false);
+        View PromocaoView =inflater.inflate(R.layout.rcl_layout2, viewGroup, false);
         promocaoAdapter.ViewHolder viewHolder = new promocaoAdapter.ViewHolder(PromocaoView);
         return viewHolder;
     }
@@ -51,9 +51,9 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
 
     @Override
     public void onBindViewHolder(@NonNull promocaoAdapter.ViewHolder viewHolder, int position) {
-        int idxTitulo = cursor.getColumnIndexOrThrow(PromocaoContract.Promocao.COLUMN_NAME_NOME);
+        int idxNome = cursor.getColumnIndexOrThrow(PromocaoContract.Promocao.COLUMN_NAME_NOME);
         cursor.moveToPosition(position);
-        viewHolder.txtNome.setText(cursor.getString(idxTitulo));
+        viewHolder.txtNome.setText(cursor.getString(idxNome));
     }
 
     @Override
@@ -66,7 +66,7 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
         public ViewHolder(final View itemView) {
             super(itemView);
 
-            txtNome = (TextView)itemView.findViewById(R.id.txt_layoutColumn1);
+            txtNome = (TextView)itemView.findViewById(R.id.txt_layoutColumn2);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
