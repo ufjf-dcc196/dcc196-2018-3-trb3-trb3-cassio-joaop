@@ -1,7 +1,5 @@
 package com.example.cassi.trab3_cssioejoao;
 
-package a20183.dcc192.trab1joaopcassio;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
@@ -10,10 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.util.List;
-
-import a20183.dcc192.trab1joaopcassio.Model.Evento;
 
 public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder> {
 
@@ -49,17 +43,17 @@ public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder>
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View EventoView =inflater.inflate(R.layout.rcl_layout_evento, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(EventoView);
+        View LivroView =inflater.inflate(R.layout.rcl_livro_layout, viewGroup, false);
+        ViewHolder viewHolder = new ViewHolder(LivroView);
         return viewHolder;
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        int idxTitulo = cursor.getColumnIndexOrThrow(EventoContract.Evento.COLUMN_NAME_TITULO);
+        int idxTitulo = cursor.getColumnIndexOrThrow(LivroContract.Livro.COLUMN_NAME_TITULO);
         cursor.moveToPosition(position);
-        viewHolder.titulo.setText(cursor.getString(idxTitulo));
+        viewHolder.txtTitulo.setText(cursor.getString(idxTitulo));
     }
 
     @Override
@@ -68,11 +62,11 @@ public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder>
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView titulo;
+        public TextView txtTitulo;
         public ViewHolder(final View itemView) {
             super(itemView);
 
-            titulo = (TextView)itemView.findViewById(R.id.txt_nomeTitulos);
+            txtTitulo = (TextView)itemView.findViewById(R.id.txt_layoutTitulo);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
