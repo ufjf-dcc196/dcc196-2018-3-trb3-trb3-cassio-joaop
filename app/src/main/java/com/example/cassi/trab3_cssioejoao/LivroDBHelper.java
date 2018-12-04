@@ -23,9 +23,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            db.execSQL(PromocaoLivroContract.PromocaoLivro.DROP_PROMOCAOLIVRO);
             db.execSQL(LivroContract.Livro.DROP_LIVRO);
             db.execSQL(PromocaoContract.Promocao.DROP_PROMOCAO);
-            db.execSQL(PromocaoLivroContract.PromocaoLivro.DROP_PROMOCAOLIVRO);
             onCreate(db);
         }
 
