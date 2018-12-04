@@ -18,13 +18,13 @@
         android:text="Cadastrar Promocao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <Button
-        android:id="@+id/btnVoltar"
+        android:id="@+id/btnListagemPromocaoVoltar"
         android:layout_width="78dp"
         android:layout_height="69dp"
         android:layout_marginStart="160dp"
@@ -36,14 +36,15 @@
         android:text="Voltar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
+        app:layout_constraintVertical_bias="0.917" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="192dp"
-        android:layout_height="209dp"
+        android:id="@+id/rcl_listagemPromocoes"
+        android:layout_width="366dp"
+        android:layout_height="357dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"

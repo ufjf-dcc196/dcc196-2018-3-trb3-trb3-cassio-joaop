@@ -2,7 +2,7 @@ package com.example.cassi.trab3_cssioejoao;
 
 import android.provider.BaseColumns;
 
-public class PromocaoLivroContract{
+public final class PromocaoLivroContract{
     public final class PromocaoLivro implements BaseColumns {
         public final static String TABLE_NAME = "PromocaoLivro";
         public final static String COLUMN_NAME_LIVRO = "titulo";

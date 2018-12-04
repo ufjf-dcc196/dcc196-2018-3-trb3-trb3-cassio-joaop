@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder> {
+public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewHolder> {
 
     private Cursor cursor;
-    private OnEventClickListener evListener;
-    private OnEventLongClickListener evLongListener;
+    private promocaoAdapter.OnEventClickListener evListener;
+    private promocaoAdapter.OnEventLongClickListener evLongListener;
 
-    public LivroAdapter(Cursor c){
+    public promocaoAdapter(Cursor c){
         cursor = c;
     }
 
@@ -27,33 +27,33 @@ public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder>
     public interface OnEventClickListener {
         void onEventClick(View EventView, int position);
     }
-    public void setOnEventClickListener(OnEventClickListener listener){
+    public void setOnEventClickListener(promocaoAdapter.OnEventClickListener listener){
         this.evListener = listener;
     }
     public interface OnEventLongClickListener {
         void onEventLongClick(View EventView, int position);
     }
-    public void setOnEventLongClickListener(OnEventLongClickListener listener){
+    public void setOnEventLongClickListener(promocaoAdapter.OnEventLongClickListener listener){
         this.evLongListener = listener;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public promocaoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View LivroView =inflater.inflate(R.layout.rcl_layout, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(LivroView);
+        View PromocaoView =inflater.inflate(R.layout.rcl_layout, viewGroup, false);
+        promocaoAdapter.ViewHolder viewHolder = new promocaoAdapter.ViewHolder(PromocaoView);
         return viewHolder;
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        int idxTitulo = cursor.getColumnIndexOrThrow(LivroContract.Livro.COLUMN_NAME_TITULO);
+    public void onBindViewHolder(@NonNull promocaoAdapter.ViewHolder viewHolder, int position) {
+        int idxTitulo = cursor.getColumnIndexOrThrow(PromocaoContract.Promocao.COLUMN_NAME_NOME);
         cursor.moveToPosition(position);
-        viewHolder.txtTitulo.setText(cursor.getString(idxTitulo));
+        viewHolder.txtNome.setText(cursor.getString(idxTitulo));
     }
 
     @Override
@@ -62,11 +62,11 @@ public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder>
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtTitulo;
+        public TextView txtNome;
         public ViewHolder(final View itemView) {
             super(itemView);
 
-            txtTitulo = (TextView)itemView.findViewById(R.id.txt_layoutColumn1);
+            txtNome = (TextView)itemView.findViewById(R.id.txt_layoutColumn1);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -114,6 +114,3 @@ public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder>
         }
     }
 }
-
-
-

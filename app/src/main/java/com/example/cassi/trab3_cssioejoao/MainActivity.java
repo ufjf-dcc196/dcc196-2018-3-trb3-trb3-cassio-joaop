@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dbHelper = new LivroDBHelper(getApplicationContext());
+
         btnCadastra = (Button) findViewById(R.id.btnCadastra);
         btnExibe = (Button) findViewById(R.id.btnExibe);
         btnPromocao = (Button) findViewById(R.id.btnPromocao);
