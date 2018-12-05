@@ -1,3 +1,6 @@
+# Aplicação: 
+## Gerenciamento das promoções do acervo de uma biblioteca virtual
+
 A aplicação criada gerencia o sistema de anúncios de uma biblioteca virtual, resumidamente temos um cadastro de livros e um cadastro de promoções ativas.
 Através de interações com o usuário podemos incluir facilmente uma promoção que contém livros ou retirar os livros da promoção.
 Outra funcionalidade é exibição de todos os livros criados, detalhados após o toque do usuário.
