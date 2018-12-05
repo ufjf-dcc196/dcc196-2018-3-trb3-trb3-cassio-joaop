@@ -73,4 +73,5 @@ public class ListagemLivros extends AppCompatActivity {
         String sort = LivroContract.Livro.COLUMN_NAME_TITULO+ " ASC";
         return db.query(LivroContract.Livro.TABLE_NAME, visao,null,null,null,null, sort);
     }
+
 }

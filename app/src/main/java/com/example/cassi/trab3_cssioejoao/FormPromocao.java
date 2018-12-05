@@ -20,6 +20,7 @@ public class FormPromocao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_promocao);
 
+        btnVoltar = (Button) findViewById(R.id.btn_FormPromocaoVoltar);
         btnCadastraPromocao = (Button) findViewById(R.id.btnCadastrarLivro);
         nome = (EditText) findViewById(R.id.txtTitulo);
         valor = (EditText) findViewById(R.id.txtAutor);
@@ -40,5 +41,13 @@ public class FormPromocao extends AppCompatActivity {
                 finish();
             }
         });
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(Activity.RESULT_OK);
+                finish();
+            }
+        });
+
     }
 }
