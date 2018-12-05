@@ -21,7 +21,7 @@ public class FormLivro extends AppCompatActivity {
         setContentView(R.layout.activity_form_livro);
 
         btnCadastraLivro = (Button) findViewById(R.id.btnCadastraLivro);
-        btnVoltar = (Button) findViewById(R.id.btn_formPromoVoltar);
+        btnVoltar = (Button) findViewById(R.id.btn_FormLivroVoltar);
         titulo = (EditText) findViewById(R.id.txtTitulo);
         autor = (EditText) findViewById(R.id.txtAutor);
         editora = (EditText) findViewById(R.id.txtEditora);
@@ -48,6 +48,12 @@ public class FormLivro extends AppCompatActivity {
                 finish();
             }
         });
-
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(Activity.RESULT_OK);
+                finish();
+            }
+        });
     }
 }
