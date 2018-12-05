@@ -1,11 +1,15 @@
 package com.example.cassi.trab3_cssioejoao;
 
+import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -44,6 +48,20 @@ public class DetPromocao extends AppCompatActivity {
 
             txtFormPromocaoNome.setText(nome);
         }
+        LivroNaoCadastrados.setOnEventLongClickListener(new LivroAdapter.OnEventLongClickListener() {
+            @Override
+            public void onEventLongClick(View EventView, int position) {
+                SQLiteDatabase db = MainActivity.dbHelper.getWritableDatabase();
+                ContentValues valores = new ContentValues();
+
+                TextView txtLivroTitulo = (TextView) EventView.findViewById(R.id.txt_layoutColumn1);
+                valores.put(PromocaoLivroContract.PromocaoLivro.COLUMN_NAME_LIVRO, txtLivroTitulo.getText().toString());
+                valores.put(PromocaoLivroContract.PromocaoLivro.COLUMN_NAME_PROMOCAO, nome);
+
+                long id = db.insert(PromocaoLivroContract.PromocaoLivro.TABLE_NAME,null, valores);
+                Log.i("DBINFO", "registro criado com id: "+id);
+            }
+        });
 
     }
 

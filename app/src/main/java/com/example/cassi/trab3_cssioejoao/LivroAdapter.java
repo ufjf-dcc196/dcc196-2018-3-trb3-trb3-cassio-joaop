@@ -25,13 +25,13 @@ public class LivroAdapter  extends RecyclerView.Adapter<LivroAdapter.ViewHolder>
     }
 
     public interface OnEventClickListener {
-        void onEventClick(View EventView, int position);
+        void onEventClick(View PromoView, int position);
     }
     public void setOnEventClickListener(OnEventClickListener listener){
         this.evListener = listener;
     }
     public interface OnEventLongClickListener {
-        void onEventLongClick(View EventView, int position);
+        void onEventLongClick(View PromoView, int position);
     }
     public void setOnEventLongClickListener(OnEventLongClickListener listener){
         this.evLongListener = listener;
