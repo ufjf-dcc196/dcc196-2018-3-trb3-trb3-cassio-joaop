@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     public static final int CADS_LIVRO = 1, VER_LIVROS = 2, CAD_PROMOCAO = 3, VER_PROMOCAO = 4, VER_LIVRO = 5;
+    public static final String PROMOCAO_NOME = "nome";
     public static LivroDBHelper dbHelper;
 
     Button btnCadastra,btnExibe,btnPromocao;

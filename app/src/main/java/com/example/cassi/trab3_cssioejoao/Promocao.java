@@ -5,14 +5,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Promocao extends AppCompatActivity {
     private Button btnVoltar, btnCadastrarPromo;
@@ -44,6 +42,15 @@ public class Promocao extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Promocao.this, FormPromocao.class);
                 startActivityForResult(intent, MainActivity.CAD_PROMOCAO);
+            }
+        });
+        PRAdapter.setOnPromoClickListener(new promocaoAdapter.OnPromoClickListener() {
+            @Override
+            public void onPromoClick(View PromoView, int position) {
+                TextView txtPromoNome = (TextView) PromoView.findViewById(R.id.txt_layoutColumn2);
+                Intent intent = new Intent(Promocao.this, DetPromocao.class);
+                intent.putExtra(String.valueOf(MainActivity.PROMOCAO_NOME), txtPromoNome.getText().toString());
+                startActivityForResult(intent, MainActivity.VER_PROMOCAO);
             }
         });
     }

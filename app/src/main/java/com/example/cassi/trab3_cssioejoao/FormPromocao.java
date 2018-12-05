@@ -3,29 +3,29 @@ package com.example.cassi.trab3_cssioejoao;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class FormPromocao extends AppCompatActivity {
-    private Button btnCadastrar,btnVoltar;
-    private EditText nome,valor;
+
+    private Button btnCadastraPromocao,btnVoltar;
+    private EditText nome, valor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_promocao);
 
-        btnCadastrar = (Button) findViewById(R.id.btnCadastraPromocao);
-        nome = (EditText) findViewById(R.id.txtNome);
-        valor = (EditText) findViewById(R.id.txtValor);
+        btnCadastraPromocao = (Button) findViewById(R.id.btnCadastrarLivro);
+        nome = (EditText) findViewById(R.id.txtTitulo);
+        valor = (EditText) findViewById(R.id.txtAutor);
 
 
-
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        btnCadastraPromocao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = MainActivity.dbHelper.getWritableDatabase();

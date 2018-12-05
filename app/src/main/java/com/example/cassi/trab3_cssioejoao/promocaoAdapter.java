@@ -12,8 +12,8 @@ import android.widget.TextView;
 public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewHolder> {
 
     private Cursor cursor;
-    private promocaoAdapter.OnEventClickListener evListener;
-    private promocaoAdapter.OnEventLongClickListener evLongListener;
+    private promocaoAdapter.OnPromoClickListener evListener;
+    private promocaoAdapter.OnPromoLongClickListener evLongListener;
 
     public promocaoAdapter(Cursor c){
         cursor = c;
@@ -24,16 +24,16 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
         notifyDataSetChanged();
     }
 
-    public interface OnEventClickListener {
-        void onEventClick(View EventView, int position);
+    public interface OnPromoClickListener {
+        void onPromoClick(View PromoView, int position);
     }
-    public void setOnEventClickListener(promocaoAdapter.OnEventClickListener listener){
+    public void setOnPromoClickListener(promocaoAdapter.OnPromoClickListener listener){
         this.evListener = listener;
     }
-    public interface OnEventLongClickListener {
-        void onEventLongClick(View EventView, int position);
+    public interface OnPromoLongClickListener {
+        void onPromoLongClick(View PromoView, int position);
     }
-    public void setOnEventLongClickListener(promocaoAdapter.OnEventLongClickListener listener){
+    public void setOnPromoLongClickListener(promocaoAdapter.OnPromoLongClickListener listener){
         this.evLongListener = listener;
     }
 
@@ -73,7 +73,7 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
                     if(evListener !=null){
                         int position = getAdapterPosition();
                         if(position!=RecyclerView.NO_POSITION){
-                            evListener.onEventClick(itemView, position);
+                            evListener.onPromoClick(itemView, position);
                         }
                     }
                 }
@@ -84,7 +84,7 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
                     if(evLongListener !=null){
                         int position = getAdapterPosition();
                         if(position!=RecyclerView.NO_POSITION){
-                            evLongListener.onEventLongClick(itemView, position);
+                            evLongListener.onPromoLongClick(itemView, position);
                             return true;
                         }
                     }
@@ -97,7 +97,7 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
             if(evListener !=null){
                 int position = getAdapterPosition();
                 if(position != RecyclerView.NO_POSITION){
-                    evListener.onEventClick(v, position);
+                    evListener.onPromoClick(v, position);
                 }
             }
         }
@@ -106,7 +106,7 @@ public class promocaoAdapter  extends RecyclerView.Adapter<promocaoAdapter.ViewH
             if(evLongListener !=null){
                 int position = getAdapterPosition();
                 if(position != RecyclerView.NO_POSITION){
-                    evLongListener.onEventLongClick(v, position);
+                    evLongListener.onPromoLongClick(v, position);
                     return true;
                 }
             }
