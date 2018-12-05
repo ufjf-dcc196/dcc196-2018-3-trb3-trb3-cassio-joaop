@@ -51,18 +51,11 @@ public class ListagemLivros extends AppCompatActivity {
                 String params[] = {titulo};
                 db.delete(PromocaoLivroContract.PromocaoLivro.TABLE_NAME,restricoes,params);
                 db.delete(LivroContract.Livro.TABLE_NAME,restricoes,params);
-                lvAdapter.notifyItemRemoved(position);
+                lvAdapter.setCursor(getLivros());
             }
         });
 
     }
-
-
-
-
-
-    
-    
     
     private Cursor getLivros()
     {
