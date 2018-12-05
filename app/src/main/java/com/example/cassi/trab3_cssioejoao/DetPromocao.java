@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +25,10 @@ public class DetPromocao extends AppCompatActivity {
         txtFormPromocaoNome = (TextView) findViewById(R.id.txt_formPromocaoNome);
         btnVoltar = (Button) findViewById(R.id.btn_formPromoVoltar);
         rclLivrosCadastrados = (RecyclerView) findViewById(R.id.rcl_LvrCadastrados);
+        rclLivrosCadastrados.setLayoutManager(new LinearLayoutManager(this));
+
         rclLivrosNaoCadastrados = (RecyclerView) findViewById(R.id.rcl_LvrNaoCadastrados);
+        rclLivrosNaoCadastrados.setLayoutManager(new LinearLayoutManager(this));
 
         Bundle bundleExtras = getIntent().getExtras();
         if(bundleExtras!=null)
