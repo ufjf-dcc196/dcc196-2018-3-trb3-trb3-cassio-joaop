@@ -1,5 +1,6 @@
 package com.example.cassi.trab3_cssioejoao;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -59,7 +60,15 @@ public class DetPromocao extends AppCompatActivity {
                 valores.put(PromocaoLivroContract.PromocaoLivro.COLUMN_NAME_PROMOCAO, nome);
 
                 long id = db.insert(PromocaoLivroContract.PromocaoLivro.TABLE_NAME,null, valores);
+                LivroCadastrados.setCursor(getLivroCadastrado());
                 Log.i("DBINFO", "registro criado com id: "+id);
+            }
+        });
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(Activity.RESULT_OK);
+                finish();
             }
         });
 

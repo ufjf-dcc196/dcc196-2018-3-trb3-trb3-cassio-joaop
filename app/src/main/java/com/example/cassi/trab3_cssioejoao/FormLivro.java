@@ -21,6 +21,7 @@ public class FormLivro extends AppCompatActivity {
         setContentView(R.layout.activity_form_livro);
 
         btnCadastraLivro = (Button) findViewById(R.id.btnCadastraLivro);
+        btnVoltar = (Button) findViewById(R.id.btn_formPromoVoltar);
         titulo = (EditText) findViewById(R.id.txtTitulo);
         autor = (EditText) findViewById(R.id.txtAutor);
         editora = (EditText) findViewById(R.id.txtEditora);
@@ -47,5 +48,6 @@ public class FormLivro extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }
