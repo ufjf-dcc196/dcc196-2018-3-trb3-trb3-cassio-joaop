@@ -53,8 +53,33 @@ public class Promocao extends AppCompatActivity {
                 startActivityForResult(intent, MainActivity.VER_PROMOCAO);
             }
         });
-    }
+        PRAdapter.setOnPromoLongClickListener(new promocaoAdapter.OnPromoLongClickListener() {
+            @Override
+            public void onPromoLongClick(View PromoView, int position) {
+                TextView txtNome = (TextView) PromoView.findViewById(R.id.txt_layoutColumn2);
+                String nome = txtNome.getText().toString();
 
+                SQLiteDatabase db = MainActivity.dbHelper.getReadableDatabase();
+                String restricoes = PromocaoContract.Promocao.COLUMN_NAME_NOME + " = ?";
+                String params[] = {nome};
+                db.delete(PromocaoLivroContract.PromocaoLivro.TABLE_NAME,restricoes,params);
+                db.delete(PromocaoContract.Promocao.TABLE_NAME,restricoes,params);
+                PRAdapter.setCursor(getPromocoes());
+            }
+        });
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == MainActivity.VER_PROMOCAO) {
+
+            PRAdapter.setCursor(getPromocoes());
+        }
+        else if(requestCode == MainActivity.CAD_PROMOCAO)
+        {
+            PRAdapter.setCursor(getPromocoes());
+        }
+    }
     private Cursor getPromocoes()
     {
         SQLiteDatabase db = MainActivity.dbHelper.getReadableDatabase();

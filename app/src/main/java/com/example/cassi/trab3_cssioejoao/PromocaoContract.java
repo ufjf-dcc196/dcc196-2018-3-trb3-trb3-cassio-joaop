@@ -12,7 +12,7 @@ public final class PromocaoContract {
 
         public final static String CREATE_PROMOCAO  = "CREATE TABLE "+Promocao.TABLE_NAME+" ("
                 + Promocao.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + Promocao.COLUMN_NAME_NOME + " TEXT, "
+                + Promocao.COLUMN_NAME_NOME + " TEXT UNIQUE, "
                 + Promocao.COLUMN_NAME_VALOR + " TEXT"
                 +")";
 

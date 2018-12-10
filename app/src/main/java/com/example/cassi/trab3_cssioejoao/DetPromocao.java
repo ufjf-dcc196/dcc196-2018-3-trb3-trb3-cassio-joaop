@@ -64,6 +64,20 @@ public class DetPromocao extends AppCompatActivity {
                 Log.i("DBINFO", "registro criado com id: "+id);
             }
         });
+        LivroCadastrados.setOnEventLongClickListener(new LivroAdapter.OnEventLongClickListener() {
+            @Override
+            public void onEventLongClick(View LivroView, int position) {
+                TextView txtTitulo = (TextView) LivroView.findViewById(R.id.txt_layoutColumn1);
+                String titulo = txtTitulo.getText().toString();
+
+                SQLiteDatabase db = MainActivity.dbHelper.getReadableDatabase();
+                String restricoes = PromocaoLivroContract.PromocaoLivro.COLUMN_NAME_LIVRO + " = ? AND " + PromocaoLivroContract.PromocaoLivro.COLUMN_NAME_PROMOCAO + " = ?";
+                String params[] = {titulo, nome};
+                long id = db.delete(PromocaoLivroContract.PromocaoLivro.TABLE_NAME,restricoes,params);
+                LivroCadastrados.setCursor(getLivroCadastrado());
+                Log.i("DBINFO", "registro criado com id: "+id);
+            }
+        });
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
